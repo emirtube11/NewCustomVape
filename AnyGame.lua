@@ -3,6 +3,7 @@
 	Infinite Yield - Blink (backtrack), Freecam and SpinBot (spin / fling)
 	Please notify me if you need credits
 ]]
+print("you using custom")
 local GuiLibrary = shared.GuiLibrary
 local players = game:GetService("Players")
 local textservice = game:GetService("TextService")
