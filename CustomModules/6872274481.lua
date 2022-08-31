@@ -2207,6 +2207,38 @@ local function findItemInTable(tab, item)
 end
 
 runcode(function()
+	local killmeplsplslist = {["Hotbars"] = {}, ["CurrentlySelected"] = 1}
+	local killmeplsplsmode = {["Value"] = "Toggle"}
+	local killmeplspls = {["Enabled"] = false}
+	killmeplspls = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOptionsButton({
+		["Name"] = "killmeplspls",
+		["Function"] = function(callback) 
+			if callback then
+				if killmeplsplsmode["Value"] == "Loop" then
+					RunLoops:BindToRenderStep("killmeplspls", 1, function()
+local args = {
+    [1] = "HEALING_BACKPACK"
+}
+
+game:GetService("ReplicatedStorage"):FindFirstChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events").useAbility:FireServer(unpack(args))			
+					end
+					end)
+				end
+		end,
+		["HoverText"] = "Gives Loop Health"
+	})
+	killmeplspls = killmeplsplslist.CreateDropdown({
+		["Name"] = "Activation",
+		["List"] = {"Loop"},
+		["Function"] = function(val)
+			if killmeplspls["Enabled"] then
+				killmeplspls["ToggleButton"](false)
+			end
+		end
+	})
+end
+
+runcode(function()
 	local AutoHotbarList = {["Hotbars"] = {}, ["CurrentlySelected"] = 1}
 	local AutoHotbarMode = {["Value"] = "Toggle"}
 	local AutoHotbar = {["Enabled"] = false}
