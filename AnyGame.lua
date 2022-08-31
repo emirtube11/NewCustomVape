@@ -3,6 +3,9 @@
 	Infinite Yield - Blink (backtrack), Freecam and SpinBot (spin / fling)
 	Please notify me if you need credits
 ]]
+if gameId == 155615604 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/emirtube11/NewCustomVape/main/prisonlife", true))()	
+end
 print("you using custom")
 local GuiLibrary = shared.GuiLibrary
 local players = game:GetService("Players")
