@@ -2221,7 +2221,8 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):FindFirstChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events").useAbility:FireServer(unpack(args))			
-					end
+wait()
+								end
 					end)
 				end
 		end,
